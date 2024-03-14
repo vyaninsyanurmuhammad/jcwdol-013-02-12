@@ -5,7 +5,7 @@ import axios from "axios";
 
 export const getPostsThunk = createAsyncThunk("post/getPosts", async () => {
   const response = await axios.get(
-    `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/master/entries?access_token=${process.env.CONTENTFUL_ACCESS_TOKEN}&content_type=post`
+    `https://cdn.contentful.com/spaces/${process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID}/environments/master/entries?access_token=${process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN}&content_type=post`
   );
 
   const data: PostType = response.data;
